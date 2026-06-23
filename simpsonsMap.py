@@ -17,6 +17,6 @@ def simpsons_map(all_maps: dict[str, dict[str, int]]) -> dict[str, float]:
     result: dict[str, float] = {}  # sample name -> Simpson's index
 
     for sample_name, sample_map in all_maps.items():
-        result[sample_name] = simpsons_index(sample_map)
+        result[sample_name] = 1.0 - simpsons_index(sample_map)
 
     return result
