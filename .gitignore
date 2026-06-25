@@ -1,3 +1,6 @@
-Data/
+# NOTE: the Data/ folder is intentionally committed to this repo (the samples are the
+# whole point), so it is NOT ignored here. Add Data/ back only if you switch to keeping
+# the samples outside version control.
 __pycache__/
 venv/
+*.pyc

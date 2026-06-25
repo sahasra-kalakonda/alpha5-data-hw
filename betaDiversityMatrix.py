@@ -1,4 +1,4 @@
-from helperFunctions import jaccard_distance, bray_curtis_distance
+from helperFunctions import jaccard_distance, bray_curtis_distance, jaccard_binary_distance
 
 
 def beta_diversity_matrix(all_maps: dict[str, dict[str, int]], distance_metric: str) -> tuple[list[str], list[list[float]]]:
@@ -25,7 +25,9 @@ def beta_diversity_matrix(all_maps: dict[str, dict[str, int]], distance_metric: 
     if distance_metric == "Bray-Curtis":
         distance_func = bray_curtis_distance
     elif distance_metric == "Jaccard":
-        distance_func = jaccard_distance
+        distance_func = jaccard_distance              # abundance-weighted (Ruzicka)
+    elif distance_metric == "Jaccard-binary":
+        distance_func = jaccard_binary_distance       # classic presence/absence
     else:
         raise ValueError(f"Error: unknown distance_metric '{distance_metric}' given to beta_diversity_matrix()")
 
